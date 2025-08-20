@@ -3,50 +3,217 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Website</title>
+  <title>Bloom Café</title>
   <style>
+    /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fffdf8;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
+
+    /* Hero Section */
     header {
-      background: #333;
-      color: #fff;
-      padding: 1rem;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)),
+                  url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
       text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
     }
-    nav {
+
+    header h1 {
+      font-size: 4.5rem;
       margin: 0;
-      padding: 0.5rem;
-      background: #444;
-      text-align: center;
+      letter-spacing: 2px;
+      animation: slideDown 1.5s ease-in-out;
     }
+
+    header p {
+      font-size: 1.4rem;
+      margin-top: 10px;
+      opacity: 0.9;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Navbar */
+    nav {
+      background: #6b4226;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
     nav a {
       color: #fff;
-      margin: 0 15px;
       text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s;
     }
-    main {
-      padding: 2rem;
+
+    nav a::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffd28c;
+      transition: width 0.3s;
+      margin: auto;
     }
+
+    nav a:hover {
+      color: #ffd28c;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Sections */
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeUp 1s ease-in-out;
+    }
+
+    .section h2 {
+      margin-bottom: 1.5rem;
+      font-size: 2.8rem;
+      color: #6b4226;
+      position: relative;
+    }
+
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #ffd28c;
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+
+    /* Menu */
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .menu-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .menu-card h3 {
+      margin-top: 0;
+      color: #6b4226;
+      font-size: 1.4rem;
+    }
+
+    .menu-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Footer */
     footer {
-      background: #333;
+      background: linear-gradient(135deg, #6b4226, #543018);
       color: #fff;
       text-align: center;
-      padding: 1rem;
+      padding: 1.8rem;
       margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
+  <!-- Hero Section -->
   <header>
-    <h1>Welcome to My Website</h1>
+    <h1>Bloom Café</h1>
+    <p>Where every cup feels like home ☕✨</p>
   </header>
 
+  <!-- Navigation -->
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <h2>Welcome to Bloom Café</h2>
+    <p>We serve freshly brewed coffee, artisanal pastries, and cozy vibes all day long. Come sip, relax, and bloom with us.</p>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="section" id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="menu-card">
+        <h3>Latte</h3>
+        <p>Creamy and smooth with a hint of sweetness.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Cappuccino</h3>
+        <p>Perfectly balanced espresso with frothy milk.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Mocha</h3>
+        <p>Chocolatey delight blended with rich espresso.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Croissant</h3>
+        <p>Flaky, buttery goodness baked fresh every morning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bloom Café | Made with ❤ and Coffee</p>
+  </footer>
+</body>
+</html>
