@@ -43,43 +43,28 @@
       animation: fadeIn 2s ease-in-out;
     }
 
-    /* Navbar */
+    /* Vertical Navigation */
     nav {
       background: #6b4226;
-      text-align: center;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 18px;
       font-weight: bold;
-      font-size: 1rem;
-      position: relative;
-      transition: color 0.3s;
-    }
-
-    nav a::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: #ffd28c;
-      transition: width 0.3s;
-      margin: auto;
+      font-size: 1.2rem;
+      transition: color 0.3s, transform 0.2s;
     }
 
     nav a:hover {
       color: #ffd28c;
-    }
-
-    nav a:hover::after {
-      width: 100%;
+      transform: scale(1.05);
     }
 
     /* Sections */
@@ -174,7 +159,7 @@
     <p>Where every cup feels like home ☕✨</p>
   </header>
 
-  <!-- Navigation -->
+  <!-- Vertical Navigation -->
   <nav>
     <a href="#home">Home</a>
     <a href="#menu">Menu</a>
